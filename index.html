@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        button{
+            font-size: 30px;
+            width: 50px;
+            margin: 10px;
+        }
+        input{
+            width: 100px;
+            height: 40px;
+            font-size: 30px;
+        }
+        #res{
+            font-size: 50px;
+        }
+    </style>
 </head>
 <body>
-    <h2>Hello World !</h2>
+    <h2>Calculator</h2>
+    <input type="number" name="" id="a">
+    <input type="number" name="" id="b"><br>
+    <button onclick="add()">+</button>
+    <button onclick="sub()">-</button>
+    <button onclick="mul()">*</button><br>
+    <button onclick="div()">/</button>
+    <button onclick="mod()">%</button>
+    <button onclick="exp()">**</button><br>
+    <button onclick="c()">C</button>
+    <h3 id="res"></h3>
     <script src="js/index.js"></script>
 </body>
 </html>
