@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="demo"></h2>
+    <script>
+        // data={fname:'manu',
+        //     lname:'ps',
+        //     fullname:function(){
+        //         return this.fname+' '+this.lname
+        //     },
+        //     age:23,
+        //     place:'ekm'
+        // }
+        // console.log(data);
+        // console.log(data.fullname());
+        
+
+
+
+        //---------------------------------call back----------------------------------
+
+        // function display(result){
+        //     console.log(result);
+        // }
+
+        // function add(a,b,callback){
+        //     let c=a+b
+        //     callback(c)
+        // }
+
+        // add(11,7,display)
+
+
+
+
+        //---------------------------------synchronous----------------------------------
+
+        // console.log('start');
+        // console.log('synchronous function');
+        // console.log('end');
+        
+
+
+        //---------------------------------asynchronous----------------------------------
+
+        // console.log('start');
+        // setTimeout(()=>{
+        //     console.log('asynchronous function');
+        // },1000)
+        // console.log('end');
+
+
+
+
+        //---------------------------------Interval----------------------------------
+
+        // setInterval(() => {
+        //     console.log('Hello');
+            
+        // }, 2000);
+
+
+
+        // let a=10
+        // const data=setInterval(()=>{
+        //     console.log(a);
+        //     a--
+        //     if (a<0) {
+        //         clearInterval(data)
+        //         console.log('💥 boom 💥');
+        //     }
+        // },1000)
+
+        //------------------------------timer----------------------------------------
+
+        // let minute=2
+        // let seconds=59
+        // const data=setInterval(()=>{
+        //     document.getElementById("demo").innerHTML=minute+':'+seconds
+        //     seconds--
+        //     if (seconds<0) {
+        //         seconds=59
+        //         minute--
+        //         if (minute<0) {
+        //             clearInterval(data)
+        //         }
+        //     }
+            
+        // },1000)
+
+
+
+        //------------------------------exception handling---------------------------
+
+        // try {
+        //     console.log(a);
+        // } 
+        // catch (error) {
+        //     console.log('an error occured :',error.message);
+        // }
+        // finally{
+        //     console.log('finally');
+            
+        // }
+        
+
+
+
+        //---------------------------------oops-----------------------------------
+
+
+        // class Student{
+        //     constructor(name){
+        //         this.name=name
+        //     }
+        //     display(){
+        //         console.log('name',this.name);
+                
+        //     }
+        // }
+
+        // let obj=new Student('Alan')
+        // obj.display()
+
+
+
+        class Teacher{
+            constructor(name){
+                this.name=name
+            }
+            display(){
+                console.log('name',this.name);
+                
+            }
+        }
+        class std extends Teacher{
+            note(){
+                console.log('std note');
+                
+            }
+        }
+
+        let obj=new std('Alan')
+        obj.display()
+        obj.note()
+
+    </script>
+</body>
+</html>
