@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="form">
+        <input type="tel" name="" id="a1">
+        <h4 id="h5"></h4>
+        <input type="password" name="" id="pass">
+        <ul>
+            <li id="len">Min 8 letters</li>
+            <li id="cap">Min 1 cap letter</li>
+            <li id="sml">Min 1 small letter</li>
+            <li id="dig">Min 1 digit letter</li>
+            <li id="char">Min 1 special char letter</li>
+        </ul>
+        <input type="submit" value="Add">
+    </form>
+
+    <script>
+        // document.getElementById("form").addEventListener('submit',function(event){
+        //     event.preventDefault()
+        //     let phn=document.getElementById("a1").value
+        //     let h5=document.getElementById("h5")
+        //     if(/^[6-9]\d{9}$/.test(phn)){
+        //         h5.innerHTML='Valid'
+        //         h5.style.color='green'
+        //     }
+        //     else{
+        //         h5.innerHTML='Invalid'
+        //         h5.style.color='red'
+        //     }
+        //     document.getElementById("a1").value=''
+
+
+            let passwd=document.getElementById("pass")
+            let len=document.getElementById("len")
+            let cap=document.getElementById("cap")
+            let sml=document.getElementById("sml")
+            let dig=document.getElementById("dig")
+            let char=document.getElementById("char")
+
+            passwd.addEventListener('input',function(){
+                const password=passwd.value
+                len.style.color=password.length>=8 ? 'green' : 'red'
+                cap.style.color=/[A-Z]/.test(password) ? 'green' : 'red'
+                sml.style.color=/[a-z]/.test(password) ? 'green' : 'red'
+                dig.style.color=/\d/.test(password) ? 'green' : 'red'
+                char.style.color=/[!@#$%&*]/.test(password) ? 'green' : 'red'
+            })
+            document.getElementById("form").addEventListener('submit',function(event){
+                event.preventDefault()
+                let pwd=document.getElementById("pass").value
+                let h5=document.getElementById("h5")
+                if(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,}$/.test(pwd)){
+                    h5.innerHTML='Valid'
+                }
+                else{
+                    h5.innerHTML='Invalid'
+                }
+            })
+        // })
+    </script>
+</body>
+</html>
