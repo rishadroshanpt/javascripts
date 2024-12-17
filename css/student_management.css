@@ -1,0 +1,17 @@
+table{
+    border: 2px solid black;
+    margin: auto;
+    margin-top: 200px;
+    margin-bottom: 100px;
+
+}
+#edit_form{
+    display: none;
+}
+td{
+    width: 70px;
+    border: 1px solid black;
+}
+.edit_btn{
+    background-color: blue;
+}
