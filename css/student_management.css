@@ -1,7 +1,6 @@
 table{
     border: 2px solid black;
     margin: auto;
-    margin-top: 200px;
     margin-bottom: 100px;
 
 }
@@ -14,4 +13,21 @@ td{
 }
 .edit_btn{
     background-color: blue;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+}
+.delete_btn{
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+}
+input{
+    margin: 20px;
+}
+#search{
+    width: 300px;
+    margin-left: 540px;
+    margin-top: 200px;
 }

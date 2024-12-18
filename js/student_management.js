@@ -26,6 +26,7 @@ function display(){
 
         let edit_td=document.createElement("td")
         let edit_btn=document.createElement("button")
+        edit_btn.classList.add("edit_btn")
         edit_btn.textContent="edit"
         edit_btn.onclick=function(){
             edit_form(i.roll)
@@ -35,6 +36,7 @@ function display(){
 
         let delete_td=document.createElement("td")
         let delete_btn=document.createElement("button")
+        delete_btn.classList.add("delete_btn")
         delete_btn.textContent="delete"
         delete_btn.onclick=function(){
             delete_std(i.roll)
@@ -106,15 +108,12 @@ function delete_std(id) {
     
 }
 
-function search() {
-    let search=document.getElementById("search")
-    search.addEventListener('input',function(){
-        const search=search.value
-        if (search.test(data.name)) {
-            data.name
-        }
-        console.log(search);
-        
-    })
-}
+const searchInput = document.getElementById("search");
+searchInput.addEventListener("input",function(event) {
+    const query = event.target.value.toLowerCase();  // Get the search query and convert to lowercase
+    data= data.filter(item => item.name.toLowerCase().includes(query));  // Filter items based on the query
+    display()
+})
+
+
 display()
