@@ -31,3 +31,10 @@ input{
     margin-left: 540px;
     margin-top: 200px;
 }
+.search{
+    position: relative;
+}
+.searchIcon{
+    position: absolute;
+    right: 0;
+}

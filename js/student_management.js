@@ -1,9 +1,9 @@
 let data=[{roll:1,name:'appu',age:12,class:4,mark:56,place:'tvm'},{roll:2,name:'ammu',age:12,class:7,mark:56,place:'ekm'}]
 
-function display(){
+function display(d=data){
     let table=document.querySelector("tbody")
     table.innerHTML=''
-    data.forEach(i => {
+    d.forEach(i => {
         let tr=document.createElement("tr")
         let id_td=document.createElement("td")
         id_td.innerHTML=i.roll
@@ -109,10 +109,10 @@ function delete_std(id) {
 }
 
 const searchInput = document.getElementById("search");
-searchInput.addEventListener("input",function(event) {
-    const query = event.target.value.toLowerCase();  // Get the search query and convert to lowercase
-    data= data.filter(item => item.name.toLowerCase().includes(query));  // Filter items based on the query
-    display()
+searchInput.addEventListener("input",function() {
+    const query = this.value.toLowerCase();  // Get the search query and convert to lowercase
+    const result= data.filter(item => item.name.toLowerCase().includes(query) || item.place.toLowerCase().includes(query));  // Filter items based on the query
+    display(result)
 })
 
 
